@@ -16,7 +16,7 @@ using Microsoft.Extensions.Logging;
 
 namespace src.Areas.Identity.Pages.Account
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "Caregiver")]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;

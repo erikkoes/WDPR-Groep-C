@@ -27,9 +27,24 @@ namespace src
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<Context>()
-            .AddDefaultTokenProviders().AddDefaultUI();
+            .AddDefaultTokenProviders()
+            .AddRoles<IdentityRole>()
+            .AddDefaultUI();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+                options.LoginPath = "/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.SlidingExpiration = true;
+            });
+
             services.AddDbContext<Context>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("Context")));
         }
