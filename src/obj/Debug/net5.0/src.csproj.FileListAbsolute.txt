@@ -159,3 +159,4 @@ C:\Users\HP\OneDrive\Bureaublad\School\WDPR-Groep-C\src\obj\Debug\net5.0\ref\src
 C:\Users\HP\OneDrive\Bureaublad\School\WDPR-Groep-C\src\obj\Debug\net5.0\src.pdb
 C:\Users\HP\OneDrive\Bureaublad\School\WDPR-Groep-C\src\obj\Debug\net5.0\src.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Bureaublad\School\WDPR-Groep-C\src\obj\Debug\net5.0\src.csproj.CopyComplete
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Home\Caregiver.cshtml.g.cs

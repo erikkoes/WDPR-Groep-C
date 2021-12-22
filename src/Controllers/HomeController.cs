@@ -22,7 +22,8 @@ namespace src.Controllers
         {
             return View();
         }
-
+        
+        [Route("Caregiver")]
         public IActionResult Caregiver()
         {
             return View();
