@@ -37,6 +37,40 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.aspnetcore.identity.entityframeworkcore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.aspnetcore.identity.ui": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.entityframeworkcore.design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.entityframeworkcore.sqlite": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.entityframeworkcore.sqlserver": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.entityframeworkcore.tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
