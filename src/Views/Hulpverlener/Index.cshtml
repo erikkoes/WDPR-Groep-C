@@ -5,19 +5,20 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    
 </head>
 <body>
-@foreach (var item in Model) {
-    <div class="col-md-6 col-sm-12">
-        <div class="card bg-dark text-white equal">
-            <img class="card-img-top" src="~/imgs/Ortho_4.jpeg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.naam) @Html.DisplayFor(modelItem => item.achternaam)</h5>
-                <p class="card-text">@Html.DisplayFor(modelItem => item.beschrijving)<p>
-                <a href="#" class="btn btn-primary"></a>
+    @foreach (var item in Model){
+        <div class="col-md-6 col-sm-12">
+            <div class="card bg-dark text-white equal">
+                <div class="card-body">
+                    <img class="card-img-top" src="~/imgs/Ortho_5.jpeg" alt="Card image cap"><!-- img.src responsive maken. Is me niet gelukt-->
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.naam) @Html.DisplayFor(modelItem => item.achternaam)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.beschrijving)</p>
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
 </body>
+
 </html>
