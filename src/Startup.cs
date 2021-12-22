@@ -29,7 +29,9 @@ namespace src
             services.AddRazorPages();
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<Context>()
-            .AddDefaultTokenProviders().AddDefaultUI();
+            .AddDefaultTokenProviders()
+            .AddDefaultUI();
+
             services.AddDbContext<Context>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("Context")));
         }
