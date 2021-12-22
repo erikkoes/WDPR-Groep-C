@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
 using src;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
 using src.Models;
 
 #line default
@@ -78,7 +78,7 @@ using src.Models;
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e2a4f899458d35b546a6e2bfd89234c2e4a94349006", async() => {
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>");
 #nullable restore
-#line 6 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
+#line 6 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
       Write(ViewData["Title"]);
 
 #line default
@@ -277,7 +277,7 @@ using src.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </nav>\r\n    </header>\r\n    <div class=\"container\">\r\n        <main role=\"main\" class=\"pb-3\">\r\n            ");
 #nullable restore
-#line 43 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
+#line 46 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
        Write(RenderBody());
 
 #line default
@@ -342,7 +342,7 @@ using src.Models;
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.Src = (string)__tagHelperAttribute_14.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_14);
 #nullable restore
-#line 54 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
+#line 57 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
 
 #line default
@@ -358,7 +358,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
 #nullable restore
-#line 55 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
+#line 58 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_Layout.cshtml"
 Write(await RenderSectionAsync("Scripts", required: false));
 
 #line default
