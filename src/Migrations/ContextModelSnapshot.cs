@@ -207,6 +207,31 @@ namespace src.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("src.Models.Hulpverlener", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("achternaam")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("beschrijving")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("imagePath")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("naam")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("specialiteit")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Hulpverlener");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)

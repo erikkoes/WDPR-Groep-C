@@ -12,4 +12,5 @@ using src.Models;
             : base(options)
         {
         }
+        public DbSet<src.Models.Hulpverlener> Hulpverlener { get; set; }
     }
