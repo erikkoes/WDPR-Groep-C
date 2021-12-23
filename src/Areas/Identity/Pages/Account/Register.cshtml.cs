@@ -46,14 +46,27 @@ namespace src.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 4)]
             [DataType(DataType.Text)]
-            [Display(Name = "Userame")]
+            [Display(Name = "Username")]
             public string UserName { get; set; }
 
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "First name")]
+            [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No numbers or symbols allowed in {0}")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Last name")]
+            [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No numbers or symbols allowed in {0}")]
+            public string LastName { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
