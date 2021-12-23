@@ -15674,6 +15674,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Utils\\Users.cshtml",
+      "TargetPath": "Views\\Utils\\Users.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
@@ -15766,11 +15771,6 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Utils\\CreateUser.cshtml",
-      "TargetPath": "Views\\Utils\\CreateUser.cshtml",
       "FileKind": "mvc"
     },
     {

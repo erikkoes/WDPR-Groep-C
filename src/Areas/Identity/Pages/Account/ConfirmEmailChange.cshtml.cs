@@ -14,10 +14,10 @@ namespace src.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ConfirmEmailChangeModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<src.Models.UserModel> _userManager;
+        private readonly SignInManager<src.Models.UserModel> _signInManager;
 
-        public ConfirmEmailChangeModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public ConfirmEmailChangeModel(UserManager<src.Models.UserModel> userManager, SignInManager<src.Models.UserModel> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;

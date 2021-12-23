@@ -16,17 +16,17 @@ using Microsoft.Extensions.Logging;
 
 namespace src.Areas.Identity.Pages.Account
 {
-    [Authorize(Roles = "Caregiver")]
+    // [Authorize(Roles = "Admin,Caregiver")]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<src.Models.UserModel> _signInManager;
+        private readonly UserManager<src.Models.UserModel> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<src.Models.UserModel> userManager,
+            SignInManager<src.Models.UserModel> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -45,6 +45,11 @@ namespace src.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Userame")]
+            public string UserName { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -74,11 +79,13 @@ namespace src.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new src.Models.UserModel { UserName = Input.UserName, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+                    
+                    // await _userManager.AddToRoleAsync(user, "Admin");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -97,7 +104,7 @@ namespace src.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        // await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }
                 }

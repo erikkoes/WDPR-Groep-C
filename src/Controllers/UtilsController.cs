@@ -11,14 +11,16 @@ using src.Models;
 
 namespace src.Controllers
 {
-    [Authorize(Roles = "Caregiver")]
+    [Authorize(Roles = "Admin")]
     public class UtilsController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<UserModel> userManager;
 
-        public UtilsController(RoleManager<IdentityRole> roleMgr)
+        public UtilsController(RoleManager<IdentityRole> roleMgr, UserManager<UserModel> userMgr)
         {
             roleManager = roleMgr;
+            userManager =  userMgr;
         }
 
         [HttpGet]
@@ -54,9 +56,10 @@ namespace src.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public IActionResult CreateUser()
+        public IActionResult Users()
         {
-            return View();
+            var users = userManager.Users;
+            return View(users);
         }
     }
 }

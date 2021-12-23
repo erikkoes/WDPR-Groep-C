@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using src.Models;
 
-    public class Context : IdentityDbContext
+    public class Context : IdentityDbContext<UserModel>
     {
         public Context (DbContextOptions<Context> options)
             : base(options)

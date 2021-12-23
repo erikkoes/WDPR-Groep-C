@@ -291,4 +291,4 @@ C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\Identity\Pa
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\CreateRole.cshtml.g.cs
-C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\CreateUser.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Users.cshtml.g.cs
