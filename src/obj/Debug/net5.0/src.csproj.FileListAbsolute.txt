@@ -462,5 +462,4 @@ C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\I
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Hubs\chatPage.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Home\Caregiver.cshtml.g.cs
-C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Home\chatPage.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

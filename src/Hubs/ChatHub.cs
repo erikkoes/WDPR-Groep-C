@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SignalRChat.Hubs
 {
-    [Authorize]
+    
         public class ChatHub : Hub
     {
-        public override Task OnConnectedAsync()
+       /* public override Task OnConnectedAsync()
         {
             using (var db = new UserContext())
             {
@@ -39,7 +39,7 @@ namespace SignalRChat.Hubs
                 }
             }
             return base.OnConnectedAsync();
-        }
+        }*/
 
         public void AddToRoom(string roomName)
         {
