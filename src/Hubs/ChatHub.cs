@@ -1,0 +1,104 @@
+using Microsoft.AspNetCore.SignalR;
+using System.Threading.Tasks;
+using GroupsExample;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+
+namespace SignalRChat.Hubs
+{
+    [Authorize]
+        public class ChatHub : Hub
+    {
+        public override Task OnConnectedAsync()
+        {
+            using (var db = new UserContext())
+            {
+                // Retrieve user.
+                var user = db.Users
+                    .Include(u => u.Rooms)
+                    .SingleOrDefault(u => u.UserName == Context.User.Identity.Name);
+
+                // If user does not exist in database, must add.
+                if (user == null)
+                {
+                    user = new User()
+                    {
+                        UserName = Context.User.Identity.Name
+                    };
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Add to each assigned group.
+                    foreach (var item in user.Rooms)
+                    {
+                        Groups.AddToGroupAsync(Context.ConnectionId, item.RoomName);
+                    }
+                }
+            }
+            return base.OnConnectedAsync();
+        }
+
+        public void AddToRoom(string roomName)
+        {
+            using (var db = new UserContext())
+            {
+                // Retrieve room.
+                var room = db.Rooms.Find(roomName);
+
+                if (room != null)
+                {
+                    var user = new User() { UserName = Context.User.Identity.Name};
+                    db.Users.Attach(user);
+
+                    room.Users.Add(user);
+                    db.SaveChanges();
+                    Groups.AddToGroupAsync(Context.ConnectionId, roomName);
+                }
+            }
+        }
+
+        public void RemoveFromRoom(string roomName)
+        {
+            using (var db = new UserContext())
+            {
+                // Retrieve room.
+                var room = db.Rooms.Find(roomName);
+                if (room != null)
+                {
+                    var user = new User() { UserName = Context.User.Identity.Name };
+                    db.Users.Attach(user);
+
+                    room.Users.Remove(user);
+                    db.SaveChanges();
+                    
+                    Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
+                }
+            }
+        }
+        public async Task JoinRoom(string roomName)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
+            await Clients.Group(roomName).SendAsync(Context.User.Identity.Name + " joined.");
+        }
+        public Task LeaveRoom(string roomName)
+        {
+             return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
+        }
+
+        public async Task SendMessage(string user, string message)
+        {
+        await Clients.All.SendAsync("ReceiveMessage", user, message);
+        }
+        public async Task SendMessageToCaller(string user, string message)
+        {
+        await Clients.Caller.SendAsync("ReceiveMessage", user, message);
+        }
+        public async Task SendMessageToGroup(string user, string message)
+        {
+        await Clients.Group("SignalR Users").SendAsync("ReceiveMessage", user, message);
+        }      
+    }
+}
