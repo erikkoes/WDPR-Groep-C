@@ -40,13 +40,3 @@ document.getElementById("joinButton").addEventListener("click", function (event)
     });
     event.preventDefault();
 });
-
-document.getElementById("sendGroupButton").addEventListener("click", function (event) {
-
-    var user = document.getElementById("userInput").value;
-    var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessageToGroup", user, message).catch(function (err) {
-        return console.error(err.toString());
-    });
-    event.preventDefault();
-});
