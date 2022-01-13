@@ -24,7 +24,28 @@ connection.start().then(function () {
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", user, message).catch(function (err) {
+    var room = document.getElementById("room").value;
+    connection.invoke("SendMessage", user, message,room,false).catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});
+document.getElementById("joinButton").addEventListener("click", function (event) {
+
+    var room = document.getElementById("room").value;
+    var user = document.getElementById("userInput").value;
+    var message = document.getElementById("messageInput").value;
+    connection.invoke("SendMessage", user, message, room,true).catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});
+
+document.getElementById("sendGroupButton").addEventListener("click", function (event) {
+
+    var user = document.getElementById("userInput").value;
+    var message = document.getElementById("messageInput").value;
+    connection.invoke("SendMessageToGroup", user, message).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();

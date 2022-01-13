@@ -83,14 +83,25 @@ namespace SignalRChat.Hubs
             await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
             await Clients.Group(roomName).SendAsync(Context.User.Identity.Name + " joined.");
         }
+        
         public Task LeaveRoom(string roomName)
         {
              return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
 
-        public async Task SendMessage(string user, string message)
+         public async Task SendMessage(string user, string message, string room, bool join)
         {
-        await Clients.All.SendAsync("ReceiveMessage", user, message);
+            if (join)
+            {
+                await JoinRoom(room).ConfigureAwait(false);
+                await Clients.Group(room).SendAsync("ReceiveMessage", user, " joined to " + room).ConfigureAwait(true);
+
+            }
+            else
+            {
+                await Clients.Group(room).SendAsync("ReceiveMessage", user, message).ConfigureAwait(true);
+
+            }
         }
         public async Task SendMessageToCaller(string user, string message)
         {
