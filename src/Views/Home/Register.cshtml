@@ -1,0 +1,50 @@
+@model AccountRequestViewModel
+@{
+    ViewData["Title"] = "Afspraak aanvraag";
+}
+
+
+<h1>@ViewData["Title"]</h1>
+<div>Mocht u denken dat jij als kind of jongere hulp nodig heeft, dan kun je je op deze pagina aanmelden. Als je onder 16 jaar bent, vraag dan je ouder(s)/voogd(en) om hulp bij het invullen.</div> 
+<form name="Create" action="/Home/CreateAccountRequest" method ="post">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Email:
+    </div>
+    <div class="col-sm">
+      <input name="Email" type="email" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      Gebruikersnaam:
+    </div>
+    <div class="col-sm">
+      <input name="Username" type="text" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      Van welke zorgverlener wilt u hulp ontvangen?
+    </div>
+    <div class="col-sm">
+        <select name="CareGiver" id="CaregiverIdSelect">
+        <option value="">--Please choose an option--</option>
+        <option value="1">Zorgverlener 1</option>
+        <option value="2">Zorgverlener 2</option>
+        <option value="3">Zorgverlener 3</option>
+    </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      Geef een beschrijving van je hulpvraag:
+    </div>
+    <div class="col-sm">
+      <input name="Description" type="text" />
+    </div>
+  </div>
+</div>
+<input type="submit" value="Maak aanvraag" />
+</form>
