@@ -78,23 +78,27 @@ namespace SignalRChat.Hubs
                 }
             }
         }
-        public async Task JoinRoom(string roomName)
-        {
-            await Groups.AddToGroupAsync(Context.ConnectionId, roomName);
-            await Clients.Group(roomName).SendAsync(Context.User.Identity.Name + " joined.");
+        private readonly string _BotUser;
+        public ChatHub(){
+            _BotUser ="My ChatBot";
         }
         
+        public async Task JoinRoom(string room)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, room);
+           
+        }
         public Task LeaveRoom(string roomName)
         {
              return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
 
-         public async Task SendMessage(string user, string message, string room, bool join)
+         public async Task SendMessage(string user, string room, string message, bool join)
         {
             if (join)
             {
                 await JoinRoom(room).ConfigureAwait(false);
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, " joined to " + room).ConfigureAwait(true);
+                await Clients.Group(room).SendAsync("ReceiveMessage", user, " has joined " + room).ConfigureAwait(true);
 
             }
             else
