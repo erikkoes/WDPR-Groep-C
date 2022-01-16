@@ -54,12 +54,24 @@ namespace src.Controllers
             return View(model);
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public IActionResult Users()
         {
             var users = userManager.Users;
             return View(users);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditUser(string id)
+        {
+            var user = await userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                return View("NotFound");
+            }
+            
+            return View(user);
         }
     }
 }
