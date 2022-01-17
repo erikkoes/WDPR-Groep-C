@@ -80,6 +80,7 @@ namespace SignalRChat.Hubs
         
         public async Task JoinRoom(string room)
         {
+            //Save new room to DB
             await Groups.AddToGroupAsync(Context.ConnectionId, room);
            
         }
@@ -93,7 +94,8 @@ namespace SignalRChat.Hubs
             // Save message in DB
             // ID
             // UserID
-            // Message ()
+            // RoomID (FK)
+            // Message (Encapsulate)
             // Likes (JSONlist[UserID])
             if (join)
             {
