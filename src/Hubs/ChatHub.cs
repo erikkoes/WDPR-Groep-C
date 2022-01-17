@@ -78,10 +78,6 @@ namespace SignalRChat.Hubs
                 }
             }
         }
-        private readonly string _BotUser;
-        public ChatHub(){
-            _BotUser ="My ChatBot";
-        }
         
         public async Task JoinRoom(string room)
         {
