@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using GroupsExample;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
@@ -41,43 +40,43 @@ namespace SignalRChat.Hubs
             return base.OnConnectedAsync();
         }*/
 
-        public void AddToRoom(string roomName)
-        {
-            using (var db = new UserContext())
-            {
-                // Retrieve room.
-                var room = db.Rooms.Find(roomName);
+        // public void AddToRoom(string roomName)
+        // {
+        //     using (var db = new src.DatabaseContext.Context())
+        //     {
+        //         // Retrieve room.
+        //         var room = db.Rooms.Find(roomName);
 
-                if (room != null)
-                {
-                    var user = new User() { UserName = Context.User.Identity.Name};
-                    db.Users.Attach(user);
+        //         if (room != null)
+        //         {
+        //             var user = new User() { UserName = Context.User.Identity.Name};
+        //             db.Users.Attach(user);
 
-                    room.Users.Add(user);
-                    db.SaveChanges();
-                    Groups.AddToGroupAsync(Context.ConnectionId, roomName);
-                }
-            }
-        }
+        //             room.Users.Add(user);
+        //             db.SaveChanges();
+        //             Groups.AddToGroupAsync(Context.ConnectionId, roomName);
+        //         }
+        //     }
+        // }
 
-        public void RemoveFromRoom(string roomName)
-        {
-            using (var db = new UserContext())
-            {
-                // Retrieve room.
-                var room = db.Rooms.Find(roomName);
-                if (room != null)
-                {
-                    var user = new User() { UserName = Context.User.Identity.Name };
-                    db.Users.Attach(user);
+        // public void RemoveFromRoom(string roomName)
+        // {
+        //     using (var db = new src.DatabaseContext.Context())
+        //     {
+        //         // Retrieve room.
+        //         var room = db.Rooms.Find(roomName);
+        //         if (room != null)
+        //         {
+        //             var user = new User() { UserName = Context.User.Identity.Name };
+        //             db.Users.Attach(user);
 
-                    room.Users.Remove(user);
-                    db.SaveChanges();
+        //             room.Users.Remove(user);
+        //             db.SaveChanges();
                     
-                    Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
-                }
-            }
-        }
+        //             Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
+        //         }
+        //     }
+        // }
         
         public async Task JoinRoom(string room)
         {
@@ -91,6 +90,11 @@ namespace SignalRChat.Hubs
 
          public async Task SendMessage(string user, string room, string message, bool join)
         {
+            // Save message in DB
+            // ID
+            // UserID
+            // Message ()
+            // Likes (JSONlist[UserID])
             if (join)
             {
                 await JoinRoom(room).ConfigureAwait(false);

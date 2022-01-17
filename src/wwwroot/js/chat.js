@@ -35,13 +35,16 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     });
     event.preventDefault();
 });
+
 document.getElementById("joinButton").addEventListener("click", function (event) {
 
     var room = document.getElementById("room").value;
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", user, message, room,true).catch(function (err) {
+
+    connection.invoke("SendMessage", user, message, room, true).catch(function (err) {
         return console.error(err.toString());
     });
+
     event.preventDefault();
 });
