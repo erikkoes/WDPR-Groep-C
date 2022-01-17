@@ -15704,6 +15704,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Utils\\Index.cshtml",
+      "TargetPath": "Views\\Utils\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\ConfirmEmailChange.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmailChange.cshtml",
       "FileKind": "mvc"

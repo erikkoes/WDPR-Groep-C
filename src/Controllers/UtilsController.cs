@@ -24,6 +24,13 @@ namespace src.Controllers
         }
 
         [HttpGet]
+        public IActionResult Index()
+        {
+            var roles = roleManager.Roles.ToArray();
+            return View(roles);
+        }
+
+        [HttpGet]
         public IActionResult CreateRole()
         {
             return View();
