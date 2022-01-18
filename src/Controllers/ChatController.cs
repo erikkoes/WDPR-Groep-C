@@ -30,8 +30,8 @@ namespace src.Controllers
             return View();
         }
         public IActionResult Rooms(){
-            var kamers = _context.Rooms.All();
-            return View(kamers);
+          //  var kamers = _context.Rooms.All();
+            return View();
         }
     }
 }

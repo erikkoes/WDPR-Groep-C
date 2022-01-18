@@ -13,6 +13,8 @@ namespace Message
         [Required]
         public string UserId{get;set;}
         [Required]
+        public string ChatId {get;set;}
+        [Required]
         public DateTime date{get;set;}
 
     }

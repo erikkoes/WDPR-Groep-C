@@ -121,6 +121,7 @@ namespace SignalRChat.Hubs
                 MessageModel message1 = new MessageModel();
                 message1.message = message;
                 message1.UserId = user;
+                message1.ChatId = room;
                 _context.Messages.Add(message1);
                 _context.SaveChanges();
                 
