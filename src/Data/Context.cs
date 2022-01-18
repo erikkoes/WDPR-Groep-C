@@ -26,6 +26,8 @@ namespace database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ChatRoomModel>()
+            .HasAlternateKey(c => c.RoomName);
         }
     }
 

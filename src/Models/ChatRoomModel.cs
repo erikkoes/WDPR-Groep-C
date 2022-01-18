@@ -10,6 +10,7 @@ namespace src.Models
         [Required]
         //[StringLength(40, MinimumLength = 4)]
        // [RegularExpression("^[a-zA-Z ]*$")]
+       
         public string RoomName { get; set; }
 
         //[Required]

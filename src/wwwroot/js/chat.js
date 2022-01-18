@@ -27,7 +27,7 @@ connection.start().then(function () {
 });
 
 document.getElementById("sendButton").addEventListener("click", function (event) {
-    var user = document.getElementById("userInput").value;
+    var user = await userManager.GetUserAsync(HttpContext.User);
     var message = document.getElementById("messageInput").value;
     var room = document.getElementById("room").value;
     connection.invoke("SendMessage", user, message,room,false).catch(function (err) {
@@ -40,7 +40,8 @@ document.getElementById("sendButton").addEventListener("click", function (event)
 document.getElementById("joinButton").addEventListener("click", function (event) {
 
     var room = document.getElementById("room").value;
-    var user = document.getElementById("userInput").value;
+    //var user = document.getElementById("userInput").value;
+    var user = await userManager.GetUserAsync(HttpContext.User);
     var message = document.getElementById("messageInput").value;
 
     connection.invoke("SendMessage", user, message, room, true).catch(function (err) {

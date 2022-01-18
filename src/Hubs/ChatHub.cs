@@ -10,7 +10,7 @@ using System;
 
 namespace SignalRChat.Hubs
 {
-    
+    [Authorize]
         public class ChatHub : Hub
     {
         private readonly Context _context;
