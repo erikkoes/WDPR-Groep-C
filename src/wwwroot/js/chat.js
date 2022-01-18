@@ -9,11 +9,17 @@ document.getElementById("sendButton").disabled = true;
 connection.on("ReceiveMessage", function (user, message) {
     var li = document.createElement("li");
     var like = document.createElement("Button");
+    var report = document.createElement("Button");
     like.textContent = "like";
+    report.textContent = "Report";
     like.classList.add("btn");
     like.classList.add("btn-primary");
+    report.classList.add("btn");
+    report.classList.add("btn-primary");
+    report.classList.add("ReportMessage");
     document.getElementById("messagesList").appendChild(li);
     document.getElementById("messagesList").appendChild(like);
+    
     // We can assign user-supplied strings to an element's textContent because it
     // is not interpreted as markup. If you're assigning in any other way, you 
     // should be aware of possible script injection concerns.
@@ -46,6 +52,12 @@ document.getElementById("joinButton").addEventListener("click", function (event)
     connection.invoke("SendMessage", user, message, room, true).catch(function (err) {
         return console.error(err.toString());
     });
+
+    event.preventDefault();
+});
+
+document.getElementsByClassName("ReportMessage").addEventListener("click", function (event, user, message){
+    
 
     event.preventDefault();
 });
