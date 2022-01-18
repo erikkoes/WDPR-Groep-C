@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using src.Models;
 using SignalRChat.Hubs;
 using database;
 
@@ -31,7 +32,7 @@ namespace src
             services.AddRazorPages();
             services.AddSignalR();
             
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<UserModel, IdentityRole>()
             .AddEntityFrameworkStores<Context>()
             .AddDefaultTokenProviders()
             .AddRoles<IdentityRole>()

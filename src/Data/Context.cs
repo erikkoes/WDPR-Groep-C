@@ -10,7 +10,7 @@ namespace database
 {
     
 
-    public class Context : IdentityDbContext
+    public class Context : IdentityDbContext<UserModel>
     {
         public DbSet<MessageModel> Messages { get; set; }
         public DbSet<ChatRoomModel> Rooms {get;set;}

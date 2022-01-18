@@ -10,13 +10,13 @@ namespace src.Areas.Identity.Pages.Account.Manage
 {
     public class DeletePersonalDataModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<src.Models.UserModel> _userManager;
+        private readonly SignInManager<src.Models.UserModel> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
 
         public DeletePersonalDataModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<src.Models.UserModel> userManager,
+            SignInManager<src.Models.UserModel> signInManager,
             ILogger<DeletePersonalDataModel> logger)
         {
             _userManager = userManager;

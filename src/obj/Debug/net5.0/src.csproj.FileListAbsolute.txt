@@ -290,6 +290,9 @@ C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\Identity\Pa
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\CreateRole.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Users.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Index.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\src.StaticWebAssets.xml
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\Humanizer.dll
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
