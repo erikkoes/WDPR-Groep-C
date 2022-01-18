@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Chat";
 }
+@model IEnumerable
 <div class="container">
         <div class="row">&nbsp;</div>
         <div class="row">
@@ -11,37 +12,24 @@
         <div class="row">&nbsp;</div>
         <div class="row">
             <div class="col-6">
-                <input type="button" id="joinButton" value="Join  Room" />
+                <a asp-area="" asp-controller="Chat" asp-action="ChatPage" id="joinButton" value ="Join Room" class="btn btn-primary">See all users</a>
             </div>
         </div>
     </div>
-<div class="container">
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-2">User</div>
-            <div class="col-4"><input type="text" id="userInput" /></div>
-        </div>
-        <div class="row">
-            <div class="col-2">Message</div>
-            <div class="col-4"><input type="text" id="messageInput" /></div>
-        </div>
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-6">
-                <input type="button" id="sendButton" value="Send Message" />
+<div class="col-4">
+            <div class="card">
+                <h5 class="card-header">Users</h5>
+                <div class="card-body">
+                    @foreach (var room in Model.AllUsers.Take(5))
+                    {
+                        <div class="row mb-4">
+                            <p class="card-text col-4">@room.RoomName</p>                           
+                        </div>
+                    }
+                    <a asp-area="" asp-controller="Char" asp-action="Rooms" class="btn btn-primary">Rooms</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <hr />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <ul id="messagesList"></ul>
-        </div>
-    </div>
 
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
