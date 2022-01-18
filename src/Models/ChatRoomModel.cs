@@ -8,11 +8,12 @@ namespace src.Models
         public int Id {get; set;}
 
         [Required]
-        [StringLength(40, MinimumLength = 4)]
-        [RegularExpression("^[a-zA-Z ]*$")]
+        //[StringLength(40, MinimumLength = 4)]
+       // [RegularExpression("^[a-zA-Z ]*$")]
         public string RoomName { get; set; }
 
-        [Required]
+        //[Required]
         public string UsersJSON { get; set; }
+
     }
 }

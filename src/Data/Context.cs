@@ -5,13 +5,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using src.Models;
+using Message;
+namespace database
+{
+    
 
     public class Context : IdentityDbContext
     {
-        public DbSet<ChatRoomModel> Rooms { get; set; }
+        public DbSet<MessageModel> Messages { get; set; }
+        public DbSet<ChatRoomModel> Rooms {get;set;}
+        
         public Context (DbContextOptions<Context> options)
             : base(options)
         {
+        }
+        public Context(){
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,3 +29,4 @@ using src.Models;
         }
     }
 
+}

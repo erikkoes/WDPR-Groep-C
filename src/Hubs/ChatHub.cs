@@ -3,12 +3,23 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using database;
+using src.Models;
+using Message;
+using System;
 
 namespace SignalRChat.Hubs
 {
     
         public class ChatHub : Hub
     {
+        private readonly Context _context;
+
+        public ChatHub(Context context)
+        {
+            _context = context;
+        }
+        
        /* public override Task OnConnectedAsync()
         {
             using (var db = new UserContext())
@@ -80,16 +91,22 @@ namespace SignalRChat.Hubs
         
         public async Task JoinRoom(string room)
         {
-            //Save new room to DB
             await Groups.AddToGroupAsync(Context.ConnectionId, room);
+            //Save new room to DB
+          ChatRoomModel chat = new ChatRoomModel();
+          chat.RoomName = room;        
+          _context.Rooms.Add(chat);
+          _context.SaveChanges();         
+            
+            }
            
-        }
+        
         public Task LeaveRoom(string roomName)
         {
              return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
 
-         public async Task SendMessage(string user, string room, string message, bool join)
+         public async Task SendMessage(string user,string message,  string room,  bool join)
         {
             // Save message in DB
             // ID
@@ -100,12 +117,25 @@ namespace SignalRChat.Hubs
             if (join)
             {
                 await JoinRoom(room).ConfigureAwait(false);
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, " has joined " + room).ConfigureAwait(true);
+                await Clients.Group(room).SendAsync("ReceiveMessage", user, " has joined " + room + " on date " + DateTime.Now).ConfigureAwait(true);
+                MessageModel message1 = new MessageModel();
+                message1.message = message;
+                message1.UserId = user;
+                _context.Messages.Add(message1);
+                _context.SaveChanges();
+                
 
             }
             else
             {
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, message).ConfigureAwait(true);
+                await Clients.Group(room).SendAsync("ReceiveMessage", user, message + " on date " + DateTime.Now).ConfigureAwait(true);
+                MessageModel message1 = new MessageModel();
+                message1.message = message;
+                message1.UserId = user;
+                message1.date = DateTime.Now;
+                _context.Messages.Add(message1);
+                _context.SaveChanges();
+                
 
             }
         }
