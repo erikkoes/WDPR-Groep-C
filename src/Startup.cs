@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using src.Models;
+using SignalRChat.Hubs;
 
 namespace src
 {
@@ -28,6 +29,7 @@ namespace src
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSignalR();
             
             services.AddIdentity<UserModel, IdentityRole>()
             .AddEntityFrameworkStores<Context>()
@@ -70,9 +72,11 @@ namespace src
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/chatHub");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

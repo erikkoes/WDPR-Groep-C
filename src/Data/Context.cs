@@ -8,8 +8,15 @@ using src.Models;
 
     public class Context : IdentityDbContext<UserModel>
     {
+        public DbSet<ChatRoomModel> Rooms { get; set; }
         public Context (DbContextOptions<Context> options)
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
+
