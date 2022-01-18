@@ -13,21 +13,21 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
 using src;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
 using src.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
@@ -76,7 +76,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n");
             WriteLiteral("\r\n<ul class=\"navbar-nav\">\r\n");
 #nullable restore
-#line 7 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
+#line 7 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
  if (SignInManager.IsSignedIn(User))
 {
 
@@ -133,7 +133,7 @@ using Microsoft.AspNetCore.Identity;
             }
             BeginWriteTagHelperAttribute();
 #nullable restore
-#line 13 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
+#line 13 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
                                                                                                           WriteLiteral(Url.Action("Index", "Home", new { area = "" }));
 
 #line default
@@ -151,7 +151,7 @@ using Microsoft.AspNetCore.Identity;
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n");
 #nullable restore
-#line 17 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
+#line 17 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
 }
 else
 {
@@ -182,7 +182,7 @@ else
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n");
 #nullable restore
-#line 26 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
+#line 26 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Shared\_LoginPartial.cshtml"
 }
 
 #line default

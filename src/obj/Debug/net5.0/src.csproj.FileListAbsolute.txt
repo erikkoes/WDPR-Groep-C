@@ -468,3 +468,4 @@ C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\S
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Chat\Index.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Chat\ChatPage.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Chat\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Chat\ChatPage.cshtml.g.cs

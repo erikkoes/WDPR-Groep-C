@@ -13,28 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 2 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
 using src.Areas.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 3 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
 using src.Areas.Identity.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using src.Areas.Identity.Pages.Account;
 
 #line default
@@ -83,7 +83,7 @@ using src.Areas.Identity.Pages.Account;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 3 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Register.cshtml"
+#line 3 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Register.cshtml"
   
     ViewData["Title"] = "Register";
 
@@ -92,7 +92,7 @@ using src.Areas.Identity.Pages.Account;
 #nullable disable
             WriteLiteral("\r\n<h1>");
 #nullable restore
-#line 7 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Register.cshtml"
+#line 7 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Register.cshtml"
 Write(ViewData["Title"]);
 
 #line default
@@ -504,7 +504,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
             }
             BeginWriteTagHelperAttribute();
 #nullable restore
-#line 11 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Register.cshtml"
+#line 11 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Register.cshtml"
                        WriteLiteral(Model.ReturnUrl);
 
 #line default

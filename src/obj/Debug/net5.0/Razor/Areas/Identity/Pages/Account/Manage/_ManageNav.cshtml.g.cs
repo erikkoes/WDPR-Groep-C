@@ -13,35 +13,35 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 2 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
 using src.Areas.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 3 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\_ViewImports.cshtml"
 using src.Areas.Identity.Pages;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using src.Areas.Identity.Pages.Account;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml"
 using src.Areas.Identity.Pages.Account.Manage;
 
 #line default
@@ -90,7 +90,7 @@ using src.Areas.Identity.Pages.Account.Manage;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 2 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml"
+#line 2 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml"
   
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 
@@ -180,7 +180,7 @@ AddHtmlAttributeValue(" ", 519, ManageNavPages.ChangePasswordNavClass(ViewContex
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n");
 #nullable restore
-#line 9 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml"
+#line 9 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml"
      if (hasExternalLogins)
     {
 
@@ -216,7 +216,7 @@ AddHtmlAttributeValue(" ", 765, ManageNavPages.ExternalLoginsNavClass(ViewContex
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n");
 #nullable restore
-#line 12 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml"
+#line 12 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml"
     }
 
 #line default
