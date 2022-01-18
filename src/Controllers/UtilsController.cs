@@ -24,10 +24,20 @@ namespace src.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var roles = roleManager.Roles.ToArray();
-            return View(roles);
+            var user = await userManager.GetUserAsync(HttpContext.User);
+            var userRoles = await userManager.GetRolesAsync(user);
+            var users = userManager.Users;
+
+            UtilsViewModel utils = new UtilsViewModel();
+            utils.User = user;
+            utils.CurrentRoles = userRoles;
+
+            utils.Roles = roles;
+            utils.AllUsers = users;
+            return View(utils);
         }
 
         [HttpGet]
