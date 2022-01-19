@@ -15639,6 +15639,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Github shared files\\WDPR-Groep-C\\src\\Views\\ReportMessage\\Report.cshtml",
+      "TargetPath": "Views\\ReportMessage\\Report.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Github shared files\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\Manage\\GenerateRecoveryCodes.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\GenerateRecoveryCodes.cshtml",
       "FileKind": "mvc"
@@ -15661,11 +15666,6 @@
     {
       "FilePath": "d:\\Github shared files\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Github shared files\\WDPR-Groep-C\\src\\Views\\Report\\Index.cshtml",
-      "TargetPath": "Views\\Report\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15801,6 +15801,11 @@
     {
       "FilePath": "d:\\Github shared files\\WDPR-Groep-C\\src\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Github shared files\\WDPR-Groep-C\\src\\Views\\ReportMessage\\Index.cshtml",
+      "TargetPath": "Views\\ReportMessage\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

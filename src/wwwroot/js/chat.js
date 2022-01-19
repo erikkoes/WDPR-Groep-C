@@ -18,6 +18,26 @@ connection.on("ReceiveMessage", function (user, message) {
     // is not interpreted as markup. If you're assigning in any other way, you 
     // should be aware of possible script injection concerns.
     li.textContent = `${user}: ${message}`;
+    var report = document.createElement("Button");
+    var reportForm = document.createElement("Form");
+    var hiddenInputMessage = document.createElement("input");
+    var hiddenInputUser = document.createElement("input");
+    report.textContent = "Report";
+    report.classList.add("btn");
+    report.classList.add("btn-primary");
+    report.classList.add("ReportMessage");
+    report.type = "sumbit";
+    report.formaction = "Report/reportMessage";
+    hiddenInputMessage.style.display = "None";
+    hiddenInputMessage.innerText = message;
+
+    hiddenInputUser.style.display = "None";
+    hiddenInputUser.innerText = user;
+
+    
+    reportForm.appendChild(hiddenInputMessage);
+    reportForm.appendChild(hiddenInputUser);
+    reportForm.appendChild(report);
 });
 
 connection.start().then(function () {

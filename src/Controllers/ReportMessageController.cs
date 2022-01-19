@@ -22,7 +22,7 @@ namespace src.Controllers
         public IActionResult index(){
             return View();
         }
-        public IActionResult ReportMessage(string user, string message){
+        public IActionResult Report(string user, string message){
             ReportMessageModel a = new ReportMessageModel();
             a.UserId = user;
             a.Message = message;

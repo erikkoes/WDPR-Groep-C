@@ -649,3 +649,5 @@ D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_Log
 D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\CreateRole.cshtml.g.cs
 D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Index.cshtml.g.cs
 D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Users.cshtml.g.cs
+D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
+D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
