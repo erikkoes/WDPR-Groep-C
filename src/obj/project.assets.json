@@ -7774,19 +7774,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\moham\\.nuget\\packages\\": {}
+    "C:\\Users\\chris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
+      "projectUniqueName": "D:\\Github shared files\\WDPR-Groep-C\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
-      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\obj\\",
+      "projectPath": "D:\\Github shared files\\WDPR-Groep-C\\src\\src.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "D:\\Github shared files\\WDPR-Groep-C\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7861,7 +7861,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
