@@ -21,5 +21,9 @@ namespace src.Controllers
         {
             return View();
         }
+        public IActionResult ReportMessage(string user, string message){
+            //bericht opslaan in database
+            return Index();
+        }
     }
 }

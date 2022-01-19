@@ -10,6 +10,10 @@ connection.on("ReceiveMessage", function (user, message) {
     var li = document.createElement("li");
     var like = document.createElement("Button");
     var report = document.createElement("Button");
+    var reportForm = document.createElement("Form");
+    var hiddenInputMessage = document.createElement("input");
+    var hiddenInputUser = document.createElement("input");
+
     like.textContent = "like";
     report.textContent = "Report";
     like.classList.add("btn");
@@ -17,13 +21,29 @@ connection.on("ReceiveMessage", function (user, message) {
     report.classList.add("btn");
     report.classList.add("btn-primary");
     report.classList.add("ReportMessage");
+    report.type = "sumbit";
+    report.formaction = "chat/reportMessage"
+    
+
+    hiddenInputMessage.style.display = "None";
+    hiddenInputMessage.innerText = message;
+
+    hiddenInputUser.style.display = "None";
+    hiddenInputUser.innerText = user;
+
     document.getElementById("messagesList").appendChild(li);
-    document.getElementById("messagesList").appendChild(like);
+    reportForm.appendChild(hiddenInputMessage);
+    reportForm.appendChild(hiddenInputUser);
+    reportForm.appendChild(report);
     
     // We can assign user-supplied strings to an element's textContent because it
     // is not interpreted as markup. If you're assigning in any other way, you 
     // should be aware of possible script injection concerns.
     li.textContent = `${user}: ${message}`;
+    li.marker = "";
+
+    li.appendChild(like);
+    li.appendChild(reportForm);
 });
 
 connection.start().then(function () {
