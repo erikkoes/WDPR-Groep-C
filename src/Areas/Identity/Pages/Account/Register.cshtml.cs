@@ -14,6 +14,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using System;
+using System.Threading.Tasks;
+
 namespace src.Areas.Identity.Pages.Account
 {
     // [Authorize(Roles = "Admin,Caregiver")]
@@ -97,6 +102,8 @@ namespace src.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    SendEmail(user.Email).Wait();
                     
                     // await _userManager.AddToRoleAsync(user, "Admin");
 
@@ -129,6 +136,20 @@ namespace src.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        private async Task SendEmail(string email)
+        {
+            _logger.LogInformation("Email.");
+            // var apiKey = Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
+            var client = new SendGridClient("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");
+            var from = new EmailAddress("mikevonk00@icloud.com", "Example User");
+            var subject = "Accepted in chat!";
+            var to = new EmailAddress(email, "Example User");
+            var plainTextContent = "You have been accepted to the chat! click this link to create a password for your account: {{intergrate link}}";
+            var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, "");
+            var response = await client.SendEmailAsync(msg);
         }
     }
 }

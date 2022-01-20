@@ -476,3 +476,5 @@ C:\Users\Admin\Desktop\WDPR-Groep-C\src\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\bin\Debug\net5.0\SendGrid.dll
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\bin\Debug\net5.0\StarkbankEcdsa.dll
