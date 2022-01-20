@@ -15774,6 +15774,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\ReportMessage\\Report.cshtml",
+      "TargetPath": "Views\\ReportMessage\\Report.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\LoginWithRecoveryCode.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\LoginWithRecoveryCode.cshtml",
       "FileKind": "mvc"
@@ -15846,6 +15851,11 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\ReportMessage\\Index.cshtml",
+      "TargetPath": "Views\\ReportMessage\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
