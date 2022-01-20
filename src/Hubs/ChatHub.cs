@@ -5,7 +5,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using database;
 using src.Models;
-using Message;
 using System;
 
 namespace SignalRChat.Hubs
@@ -93,7 +92,7 @@ namespace SignalRChat.Hubs
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, room);
             //Save new room to DB
-          ChatRoomModel chat = new ChatRoomModel();
+          ChatRoom chat = new ChatRoom();
           chat.RoomName = room;        
           _context.Rooms.Add(chat);
           _context.SaveChanges();         
@@ -106,40 +105,40 @@ namespace SignalRChat.Hubs
              return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
 
-         public async Task SendMessage(string user,string message,  string room,  bool join)
-        {
-            // Save message in DB
-            // ID
-            // UserID
-            // RoomID (FK)
-            // Message (Encapsulate)
-            // Likes (JSONlist[UserID])
-            if (join)
-            {
-                await JoinRoom(room).ConfigureAwait(false);
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, " has joined " + room + " on date " + DateTime.Now).ConfigureAwait(true);
-                MessageModel message1 = new MessageModel();
-                message1.message = message;
-                message1.UserId = user;
-                message1.ChatId = room;
-                _context.Messages.Add(message1);
-                _context.SaveChanges();
+        //  public async Task SendMessage(string user,string message,  string room,  bool join)
+        // {
+        //     // Save message in DB
+        //     // ID
+        //     // UserID
+        //     // RoomID (FK)
+        //     // Message (Encapsulate)
+        //     // Likes (JSONlist[UserID])
+        //     if (join)
+        //     {
+        //         await JoinRoom(room).ConfigureAwait(false);
+        //         await Clients.Group(room).SendAsync("ReceiveMessage", user, " has joined " + room + " on date " + DateTime.Now).ConfigureAwait(true);
+        //         MessageModel message1 = new MessageModel();
+        //         message1.message = message;
+        //         message1.UserId = user;
+        //         message1.ChatRoomId = ;
+        //         _context.Messages.Add(message1);
+        //         _context.SaveChanges();
                 
 
-            }
-            else
-            {
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, message + " on date " + DateTime.Now).ConfigureAwait(true);
-                MessageModel message1 = new MessageModel();
-                message1.message = message;
-                message1.UserId = user;
-                message1.date = DateTime.Now;
-                _context.Messages.Add(message1);
-                _context.SaveChanges();
+        //     }
+        //     else
+        //     {
+        //         await Clients.Group(room).SendAsync("ReceiveMessage", user, message + " on date " + DateTime.Now).ConfigureAwait(true);
+        //         MessageModel message1 = new MessageModel();
+        //         message1.message = message;
+        //         message1.UserId = user;
+        //         message1.date = DateTime.Now;
+        //         _context.Messages.Add(message1);
+        //         _context.SaveChanges();
                 
 
-            }
-        }
+        //     }
+        // }
         public async Task SendMessageToCaller(string user, string message)
         {
         await Clients.Caller.SendAsync("ReceiveMessage", user, message);

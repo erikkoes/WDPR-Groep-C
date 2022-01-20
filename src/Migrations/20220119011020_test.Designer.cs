@@ -2,19 +2,47 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using database;
 
 namespace src.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220119011020_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0");
+
+            modelBuilder.Entity("Message.MessageModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ChatId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -144,7 +172,7 @@ namespace src.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("src.Models.ChatRoom", b =>
+            modelBuilder.Entity("src.Models.ChatRoomModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -152,9 +180,6 @@ namespace src.Migrations
 
                     b.Property<string>("RoomName")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoomSubject")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -169,41 +194,14 @@ namespace src.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ChatRoomId")
+                    b.Property<int>("ChatId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("UserId", "ChatRoomId");
+                    b.HasKey("UserId", "ChatId");
 
-                    b.HasIndex("ChatRoomId");
+                    b.HasIndex("ChatId");
 
                     b.ToTable("ChatUser");
-                });
-
-            modelBuilder.Entity("src.Models.MessageModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ChatRoomId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("message")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ChatRoomId");
-
-                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("src.Models.UserModel", b =>
@@ -329,9 +327,9 @@ namespace src.Migrations
 
             modelBuilder.Entity("src.Models.ChatUser", b =>
                 {
-                    b.HasOne("src.Models.ChatRoom", "Chat")
+                    b.HasOne("src.Models.ChatRoomModel", "Chat")
                         .WithMany("Users")
-                        .HasForeignKey("ChatRoomId")
+                        .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -346,19 +344,8 @@ namespace src.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("src.Models.MessageModel", b =>
+            modelBuilder.Entity("src.Models.ChatRoomModel", b =>
                 {
-                    b.HasOne("src.Models.ChatRoom", null)
-                        .WithMany("Messages")
-                        .HasForeignKey("ChatRoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("src.Models.ChatRoom", b =>
-                {
-                    b.Navigation("Messages");
-
                     b.Navigation("Users");
                 });
 #pragma warning restore 612, 618

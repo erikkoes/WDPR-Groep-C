@@ -1,19 +1,20 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
 using System.ComponentModel.DataAnnotations;
 using System;
 
-namespace Message
+namespace src.Models
 {
     public class MessageModel
     {
         
         public int Id {get; set;}
-         [Required]
+        [Required]
         public string message{get;set;}
         [Required]
         public string UserId{get;set;}
         [Required]
-        public string ChatId {get;set;}
+        public int ChatRoomId {get;set;}
         [Required]
         public DateTime date{get;set;}
 
