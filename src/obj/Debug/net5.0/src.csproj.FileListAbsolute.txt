@@ -651,3 +651,10 @@ D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Index
 D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Users.cshtml.g.cs
 D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
 D:\Github shared files\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Create.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Delete.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Details.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Edit.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\index.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs

@@ -7,6 +7,7 @@ using database;
 using src.Models;
 using Message;
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace SignalRChat.Hubs
 {
@@ -14,10 +15,13 @@ namespace SignalRChat.Hubs
         public class ChatHub : Hub
     {
         private readonly Context _context;
+        private readonly UserManager<UserModel> _userManager;
+        
 
-        public ChatHub(Context context)
+        public ChatHub(Context context, UserManager<UserModel> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
         
        /* public override Task OnConnectedAsync()

@@ -15,6 +15,7 @@ namespace database
         public DbSet<MessageModel> Messages { get; set; }
         public DbSet<ChatRoomModel> Rooms {get;set;}
         public DbSet<ReportMessageModel> Reports{get;set;}
+         public DbSet<AanmeldModel> Aanmeldingen{get;set;}
         
         public Context (DbContextOptions<Context> options)
             : base(options)
