@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using src.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace src.Controllers
 {
@@ -29,7 +30,7 @@ namespace src.Controllers
         
         public IActionResult Index()
         {
-            var rooms = _context.Rooms.ToList();
+            var rooms = _context.Rooms.Include(r => r.Users).ToList();
 
             // RoomViewModel rmodel = new RoomViewModel();
 
@@ -42,16 +43,16 @@ namespace src.Controllers
             // }
 
             ViewBag.rooms = rooms;
-            // foreach (var item in rooms)
-            // {
-            //     _logger.LogInformation("a");
-            //     foreach (var x in item.Users)
-            //     {
-            //         // _logger.LogInformation(x.UserId);
-            //         _logger.LogInformation("b");
-            //     }
+            foreach (var item in rooms)
+            {
+                _logger.LogInformation("a");
+                foreach (var x in item.Users)
+                {
+                    // _logger.LogInformation(x.UserId);
+                    _logger.LogInformation("b");
+                }
                 
-            // }
+            }
             return View(Input);
         }
 
