@@ -17,7 +17,10 @@ namespace src.Controllers
     {
         private readonly Context _context;
          private readonly UserManager<UserModel> _userManager;
-
+        public AanmeldController(Context context, UserManager<UserModel> userManager){
+         _context = context;
+         _userManager = userManager;
+        }
         // GET: Aanmeld
         public async Task<IActionResult> Index()
         {
