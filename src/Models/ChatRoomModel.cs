@@ -23,6 +23,5 @@ namespace src.Models
 
         public ICollection<ChatUser> Users { get; set; }
         
-        public ICollection<MessageModel> Messages { get; set; }
     }
 }

@@ -474,3 +474,7 @@ c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\U
 c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Users.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs

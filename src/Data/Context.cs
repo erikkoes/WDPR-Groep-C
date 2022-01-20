@@ -27,7 +27,7 @@ namespace database
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ChatRoom>()
+           modelBuilder.Entity<ChatRoom>()
                 .HasAlternateKey(c => c.RoomName);
 
             modelBuilder.Entity<ChatUser>()
