@@ -206,6 +206,24 @@ namespace src.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("src.Models.ReportMessageModel", b =>
+            {
+                b.Property<string>("ReportId")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("Message")
+                    .IsRequired()
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("UserId")
+                    .IsRequired()
+                    .HasColumnType("TEXT");
+
+                b.HasKey("ReportId");
+
+                b.ToTable("Reports");
+            });
+
             modelBuilder.Entity("src.Models.UserModel", b =>
                 {
                     b.Property<string>("Id")
