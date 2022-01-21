@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using src.Models;
 
@@ -14,10 +15,10 @@ namespace src.Controllers
     [Authorize(Roles = "Admin")]
     public class UtilsController : Controller
     {
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly RoleManager<RoleModel> roleManager;
         private readonly UserManager<UserModel> userManager;
 
-        public UtilsController(RoleManager<IdentityRole> roleMgr, UserManager<UserModel> userMgr)
+        public UtilsController(RoleManager<RoleModel> roleMgr, UserManager<UserModel> userMgr)
         {
             roleManager = roleMgr;
             userManager =  userMgr;
@@ -29,7 +30,11 @@ namespace src.Controllers
             var roles = roleManager.Roles.ToArray();
             var user = await userManager.GetUserAsync(HttpContext.User);
             var userRoles = await userManager.GetRolesAsync(user);
-            var users = userManager.Users;
+            var users = await userManager.Users
+                .Include(x => x.UserRoles)
+                .ThenInclude(x => x.Role)
+                .AsNoTracking()
+                .ToListAsync();
 
             UtilsViewModel utils = new UtilsViewModel();
             utils.User = user;
@@ -51,12 +56,12 @@ namespace src.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityRole identityRole = new IdentityRole
+                RoleModel roleModel = new RoleModel
                 {
                     Name = model.RoleName
                 };
 
-                IdentityResult result =  await roleManager.CreateAsync(identityRole);
+                IdentityResult result =  await roleManager.CreateAsync(roleModel);
 
                 if (result.Succeeded)
                 {
@@ -74,7 +79,11 @@ namespace src.Controllers
         [HttpGet]
         public IActionResult Users()
         {
-            var users = userManager.Users;
+            var users = userManager.Users
+                .Include(x => x.UserRoles)
+                .ThenInclude(x => x.Role)
+                .AsNoTracking()
+                .ToList();
             return View(users);
         }
 

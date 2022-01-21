@@ -29,10 +29,10 @@ namespace src
             services.AddControllersWithViews();
             services.AddRazorPages();
             
-            services.AddIdentity<UserModel, IdentityRole>()
+            services.AddIdentity<UserModel, RoleModel>()
             .AddEntityFrameworkStores<Context>()
             .AddDefaultTokenProviders()
-            .AddRoles<IdentityRole>()
+            .AddRoles<RoleModel>()
             .AddDefaultUI();
 
             services.ConfigureApplicationCookie(options =>

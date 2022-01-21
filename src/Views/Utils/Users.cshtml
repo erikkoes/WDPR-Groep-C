@@ -22,6 +22,10 @@
             <div class="card-body">
                 <h5 class="card-title">@user.UserName</h5>
                 <p class="card-title">@user.Email</p>
+                @foreach (var item in user.UserRoles)
+                {
+                    <p class="card-title">@item.Role.Name</p>
+                }
             </div>
             <div class="card-footer">
                 <a asp-action="EditUser" asp-controller="UtilsController" asp-route-id="@user.Id" class="btn btn-danger">Edit</a>

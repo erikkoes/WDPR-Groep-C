@@ -26,6 +26,10 @@
                         <div class="row mb-4">
                             <p class="card-text col-4">@user.UserName</p>
                             <p class="card-text col-8">@user.Email</p>
+                            @foreach (var item in user.UserRoles)
+                            {
+                                <small class="card-text col-8">@item.Role.Name</small>
+                            }
                         </div>
                     }
                     <a asp-area="" asp-controller="Utils" asp-action="Users" class="btn btn-primary">See all users</a>
