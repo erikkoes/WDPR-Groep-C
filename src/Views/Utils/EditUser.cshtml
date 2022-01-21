@@ -1,0 +1,77 @@
+@model src.Models.UserModel
+
+@{
+    ViewBag.Title = "Edit Users";
+}
+
+@if (Model.Id != null)
+{
+    <div class="row">
+        <div class="col-6">
+            <h1>Edit User</h1>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="@Model.Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="@Model.UserName">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">First name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="@Model.FirstName">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Last name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="@Model.LastName">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <h1>Roles</h1>
+            <h4>Current roles:</h4>
+            <ul>
+                @foreach (var item in Model.UserRoles)
+                {
+                    <li>@item.Role.Name @if (item.Role.Name != "Admin"){ <a class='ml-2' href=''>remove</a> } </li>
+                }
+            </ul>
+            <h4>Add new role:</h4>
+            @* @foreach (var item in ViewBag.Roles)
+                        {
+                            @foreach (var x in Model.UserRoles)
+                            {
+                                <p>@x.Role.Name - @item.Name</p>
+                                if (x.RoleId != item.Id)
+                                {
+                                }
+                            }
+                        } *@
+            <form action="/Utils/AddRoleToUser" method="post">
+                <div class="form-group">
+                    @foreach (var item in ViewBag.Roles) {
+                            <p>@item.Name</p>
+                        }
+                    <select id="RoleId" name="RoleId" class="form-control">
+                        @foreach (var item in ViewBag.Roles)
+                        {
+                            @foreach (var x in Model.UserRoles)
+                            {
+                                @* <p>@x.Role.Id - @item.Id</p> *@
+                                if (x.RoleId != item.Id)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            }
+                        }
+                    </select>
+                    <input type="hidden" name="UserId" value="@Model.Id">
+                </div>
+                <button type="submit" asp-action="AddRoleToUser" asp-controller="Utils" asp-for="@Model.Id" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+    
+}

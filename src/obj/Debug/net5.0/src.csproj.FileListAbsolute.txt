@@ -293,3 +293,4 @@ C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_Log
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\CreateRole.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Users.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\EditUser.cshtml.g.cs
