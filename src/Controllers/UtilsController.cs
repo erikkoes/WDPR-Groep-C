@@ -29,7 +29,7 @@ namespace src.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var roles = _roleManager.Roles.ToArray();
+            var roles = await _roleManager.Roles.ToListAsync();
             var user = await _userManager.GetUserAsync(HttpContext.User);
             var userRoles = await _userManager.GetRolesAsync(user);
             var users = await _userManager.Users
@@ -104,7 +104,7 @@ namespace src.Controllers
                 return View("NotFound");
             }
 
-            var roles = _roleManager.Roles.ToArray();
+            var roles = await _roleManager.Roles.ToListAsync();
             ViewBag.Roles = roles;
             
             return View(user);

@@ -49,7 +49,7 @@
                                 }
                             }
                         } *@
-            <form action="/Utils/AddRoleToUser" method="post">
+            <form asp-action="AddRoleToUser">
                 <div class="form-group">
                     @foreach (var item in ViewBag.Roles) {
                             <p>@item.Name</p>
@@ -57,14 +57,15 @@
                     <select id="RoleId" name="RoleId" class="form-control">
                         @foreach (var item in ViewBag.Roles)
                         {
-                            @foreach (var x in Model.UserRoles)
+                            @*@foreach (var x in Model.UserRoles)
                             {
-                                @* <p>@x.Role.Id - @item.Id</p> *@
-                                if (x.RoleId != item.Id)
-                                {
+                                @* <p>@x.Role.Id - @item.Id</p> 
+                                if (x.RoleId == item.Id)
+
+                                {*@
                                     <option value="@item.Id">@item.Name</option>
-                                }
-                            }
+                               @* }
+                            }*@
                         }
                     </select>
                     <input type="hidden" name="UserId" value="@Model.Id">
