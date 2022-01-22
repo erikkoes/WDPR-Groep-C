@@ -4,12 +4,13 @@ namespace src.Models
 {
     public class AanmeldModel
     {
-        public int Id {get; set;}
+        public int Id { get; set; }
+
         [Required]
-        public UserModel CareGiverId { get; set; }
+        public UserModel CareGiver { get; set; }
+
         [Required]
-        
-        public UserModel UserId { get; set; }
+        public UserModel User { get; set; }
 
     }
 }

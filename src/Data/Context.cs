@@ -13,9 +13,9 @@ namespace database
     public class Context : IdentityDbContext<UserModel>
     {
         public DbSet<MessageModel> Messages { get; set; }
-        public DbSet<ChatRoomModel> Rooms {get;set;}
-        public DbSet<ReportMessageModel> Reports{get;set;}
-         public DbSet<AanmeldModel> Aanmeldingen{get;set;}
+        public DbSet<ChatRoomModel> Rooms { get; set; }
+        public DbSet<ReportMessageModel> Reports { get; set; }
+        public DbSet<AanmeldModel> Aanmeldingen { get; set; }
         
         public Context (DbContextOptions<Context> options)
             : base(options)
@@ -31,9 +31,7 @@ namespace database
             modelBuilder.Entity<ChatRoomModel>()
             .HasAlternateKey(c => c.RoomName);
 
-            modelBuilder.Entity<UserAanmelding>()
-            .HasOne(x => x.user)
-            .WithOne(x => x.aanmelding);
+            modelBuilder.Entity<UserAanmelding>().
         }
     }
 

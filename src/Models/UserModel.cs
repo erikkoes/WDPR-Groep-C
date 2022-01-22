@@ -8,10 +8,9 @@ namespace src.Models
     {
         // public ICollection<UserRole> UserRoles { get; set; }
         public string FirstName { get; set; }
+        
         public string LastName { get; set; }
 
-        public UserAanmelding aanmelding {get;set;}
-
-
+        public UserAanmelding aanmelding { get; set; }
     }
 }
