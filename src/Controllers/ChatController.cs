@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using src.Models;
 using Microsoft.EntityFrameworkCore;
+using SignalRChat.Hubs;
 
 namespace src.Controllers
 {
@@ -19,13 +20,13 @@ namespace src.Controllers
     {
         private readonly Context _context;
         private readonly ILogger<ChatController> _logger;
-        private readonly UserManager<UserModel> userManager;
+        private readonly UserManager<UserModel> _userManager;
 
         public ChatController(Context context, ILogger<ChatController> logger, UserManager<UserModel> userMgr)
         {
             _context = context;
             _logger = logger;
-            userManager = userMgr;
+            _userManager = userMgr;
         }
         
         public IActionResult Index()
@@ -43,16 +44,16 @@ namespace src.Controllers
             // }
 
             ViewBag.rooms = rooms;
-            foreach (var item in rooms)
-            {
-                _logger.LogInformation("a");
-                foreach (var x in item.Users)
-                {
-                    // _logger.LogInformation(x.UserId);
-                    _logger.LogInformation("b");
-                }
+            // foreach (var item in rooms)
+            // {
+            //     _logger.LogInformation("a");
+            //     foreach (var x in item.Users)
+            //     {
+            //         // _logger.LogInformation(x.UserId);
+            //         _logger.LogInformation("b");
+            //     }
                 
-            }
+            // }
             return View(Input);
         }
 
@@ -84,7 +85,7 @@ namespace src.Controllers
                 await _context.Rooms.AddAsync(room);
                 await _context.SaveChangesAsync();
 
-                UserModel self = await userManager.GetUserAsync(HttpContext.User);
+                UserModel self = await _userManager.GetUserAsync(HttpContext.User);
                 await AddUserToChatAsync(room.Id, self);
             }
 
@@ -129,6 +130,19 @@ namespace src.Controllers
             }
             
             return View(rmodel);
+        }
+
+        [Route("ChatRoom/{id}")]
+        public async Task<IActionResult> ChatRoom(int id)
+        {
+            _logger.LogInformation(id.ToString());
+            var user = _userManager.GetUserAsync(HttpContext.User);
+
+            // Connect user to room
+
+            ChatHub ch = new ChatHub(_context);
+            ch.JoinRoom(id.ToString());
+            return View();
         }
     }
 }

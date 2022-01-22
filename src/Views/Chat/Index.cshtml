@@ -35,7 +35,7 @@
                         <td>@room.RoomName</td>
                         <td>@room.RoomSubject</td>
                         <td>@room.Users.Count</td> 
-                        <td><button type="button" class="btn btn-primary">Join</button></td>
+                        <td><a asp-controller="Chat" asp-action="ChatRoom" asp-route-id="@room.Id" type="button" class="btn btn-primary">Join</a></td>
                     </tr>
                 }
             </tbody>

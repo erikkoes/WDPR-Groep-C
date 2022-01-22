@@ -480,3 +480,4 @@ C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\R
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
+C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Chat\ChatRoom.cshtml.g.cs

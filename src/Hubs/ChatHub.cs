@@ -91,18 +91,15 @@ namespace SignalRChat.Hubs
         public async Task JoinRoom(string room)
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, room);
-            //Save new room to DB
-          ChatRoom chat = new ChatRoom();
-          chat.RoomName = room;        
-          _context.Rooms.Add(chat);
-          _context.SaveChanges();         
+
+            // Activate getting messages
             
-            }
+        }
            
         
         public Task LeaveRoom(string roomName)
         {
-             return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
+            return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
         }
 
         //  public async Task SendMessage(string user,string message,  string room,  bool join)
@@ -141,7 +138,7 @@ namespace SignalRChat.Hubs
         // }
         public async Task SendMessageToCaller(string user, string message)
         {
-        await Clients.Caller.SendAsync("ReceiveMessage", user, message);
+            await Clients.Caller.SendAsync("ReceiveMessage", user, message);
         }
        
     }
