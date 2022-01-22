@@ -6,10 +6,10 @@ namespace src.Models
     {
         public int Id {get; set;}
         [Required]
-        public string CareGiverId { get; set; }
+        public UserModel CareGiverId { get; set; }
         [Required]
         
-        public string UserId { get; set; }
+        public UserModel UserId { get; set; }
 
     }
 }

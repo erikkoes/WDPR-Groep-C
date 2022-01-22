@@ -30,6 +30,10 @@ namespace database
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ChatRoomModel>()
             .HasAlternateKey(c => c.RoomName);
+
+            modelBuilder.Entity<UserAanmelding>()
+            .HasOne(x => x.user)
+            .WithOne(x => x.aanmelding);
         }
     }
 

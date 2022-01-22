@@ -60,6 +60,8 @@ namespace src.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                aanmeldModel.UserId = user;
                 _context.Add(aanmeldModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
