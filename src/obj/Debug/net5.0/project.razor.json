@@ -15739,6 +15739,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Chat\\ChatPage.cshtml",
+      "TargetPath": "Views\\Chat\\ChatPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
       "FileKind": "mvc"
@@ -15766,6 +15771,11 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\ReportMessage\\Report.cshtml",
+      "TargetPath": "Views\\ReportMessage\\Report.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15844,6 +15854,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\ReportMessage\\Index.cshtml",
+      "TargetPath": "Views\\ReportMessage\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
       "FileKind": "mvc"
@@ -15861,6 +15876,11 @@
     {
       "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\Views\\Chat\\ChatRoom.cshtml",
+      "TargetPath": "Views\\Chat\\ChatRoom.cshtml",
       "FileKind": "mvc"
     },
     {

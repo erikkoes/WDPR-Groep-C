@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using src.Models;
 using SignalRChat.Hubs;
+using database;
 
 namespace src
 {

@@ -3,116 +3,27 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using database;
+using src.Models;
+using System;
 
 namespace SignalRChat.Hubs
 {
-    
-        public class ChatHub : Hub
+    public class ChatHub : Hub
     {
-       /* public override Task OnConnectedAsync()
+        public async Task SendMessage(string user, string message)
         {
-            using (var db = new UserContext())
-            {
-                // Retrieve user.
-                var user = db.Users
-                    .Include(u => u.Rooms)
-                    .SingleOrDefault(u => u.UserName == Context.User.Identity.Name);
-
-                // If user does not exist in database, must add.
-                if (user == null)
-                {
-                    user = new User()
-                    {
-                        UserName = Context.User.Identity.Name
-                    };
-                    db.Users.Add(user);
-                    db.SaveChanges();
-                }
-                else
-                {
-                    // Add to each assigned group.
-                    foreach (var item in user.Rooms)
-                    {
-                        Groups.AddToGroupAsync(Context.ConnectionId, item.RoomName);
-                    }
-                }
-            }
-            return base.OnConnectedAsync();
-        }*/
-
-        // public void AddToRoom(string roomName)
-        // {
-        //     using (var db = new src.DatabaseContext.Context())
-        //     {
-        //         // Retrieve room.
-        //         var room = db.Rooms.Find(roomName);
-
-        //         if (room != null)
-        //         {
-        //             var user = new User() { UserName = Context.User.Identity.Name};
-        //             db.Users.Attach(user);
-
-        //             room.Users.Add(user);
-        //             db.SaveChanges();
-        //             Groups.AddToGroupAsync(Context.ConnectionId, roomName);
-        //         }
-        //     }
-        // }
-
-        // public void RemoveFromRoom(string roomName)
-        // {
-        //     using (var db = new src.DatabaseContext.Context())
-        //     {
-        //         // Retrieve room.
-        //         var room = db.Rooms.Find(roomName);
-        //         if (room != null)
-        //         {
-        //             var user = new User() { UserName = Context.User.Identity.Name };
-        //             db.Users.Attach(user);
-
-        //             room.Users.Remove(user);
-        //             db.SaveChanges();
-                    
-        //             Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
-        //         }
-        //     }
-        // }
-        
-        public async Task JoinRoom(string room)
-        {
-            //Save new room to DB
-            await Groups.AddToGroupAsync(Context.ConnectionId, room);
-           
-        }
-        public Task LeaveRoom(string roomName)
-        {
-             return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomName);
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
 
-         public async Task SendMessage(string user, string room, string message, bool join)
+        public Task JoinRoom(string roomId)
         {
-            // Save message in DB
-            // ID
-            // UserID
-            // RoomID (FK)
-            // Message (Encapsulate)
-            // Likes (JSONlist[UserID])
-            if (join)
-            {
-                await JoinRoom(room).ConfigureAwait(false);
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, " has joined " + room).ConfigureAwait(true);
-
-            }
-            else
-            {
-                await Clients.Group(room).SendAsync("ReceiveMessage", user, message).ConfigureAwait(true);
-
-            }
+            return Groups.AddToGroupAsync(Context.ConnectionId, roomId);
         }
-        public async Task SendMessageToCaller(string user, string message)
+
+        public Task LeaveRoom(string roomId)
         {
-        await Clients.Caller.SendAsync("ReceiveMessage", user, message);
+            return Groups.RemoveFromGroupAsync(Context.ConnectionId, roomId);
         }
-       
     }
 }
