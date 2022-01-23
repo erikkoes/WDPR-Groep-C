@@ -45,7 +45,7 @@ namespace src.Migrations
             migrationBuilder.AddForeignKey(
                 name: "FK_ChatUser_Rooms_ChatRoomId",
                 table: "ChatUser",
-                column: "ChatRoomId",
+                column: "ChatId",
                 principalTable: "Rooms",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);

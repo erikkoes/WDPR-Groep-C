@@ -98,8 +98,8 @@ namespace src.Controllers
 
         private async Task AddUserToChatAsync(int roomId, UserModel self)
         {
-            _logger.LogInformation(self.Id);
-            _logger.LogInformation(roomId.ToString());
+            // _logger.LogInformation(self.Id);
+            // _logger.LogInformation(roomId.ToString());
             ChatUser chatuser = new ChatUser
             {
                 UserId = self.Id,

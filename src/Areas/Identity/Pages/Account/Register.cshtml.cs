@@ -147,7 +147,7 @@ namespace src.Areas.Identity.Pages.Account
             var subject = "Accepted in chat!";
             var to = new EmailAddress(email, "Example User");
             var plainTextContent = "You have been accepted to the chat! click this link to create a password for your account: {{intergrate link}}";
-            var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
+            // var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, "");
             var response = await client.SendEmailAsync(msg);
         }
