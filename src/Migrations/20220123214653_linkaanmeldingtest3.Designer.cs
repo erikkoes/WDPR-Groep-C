@@ -9,8 +9,8 @@ using database;
 namespace src.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220119232612_Aanmelding2")]
-    partial class Aanmelding2
+    [Migration("20220123214653_linkaanmeldingtest3")]
+    partial class linkaanmeldingtest3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -178,9 +178,11 @@ namespace src.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CareGiverId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CaregiverId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CaregiverId1")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -188,7 +190,38 @@ namespace src.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Aanmeldingen");
+                    b.HasIndex("CaregiverId")
+                        .IsUnique();
+
+                    b.HasIndex("CaregiverId1");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Aanmelding");
+                });
+
+            modelBuilder.Entity("src.Models.Caregiver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Caregiver");
                 });
 
             modelBuilder.Entity("src.Models.ChatRoomModel", b =>
@@ -348,6 +381,54 @@ namespace src.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("src.Models.AanmeldModel", b =>
+                {
+                    b.HasOne("src.Models.Caregiver", "Caregiver")
+                        .WithOne()
+                        .HasForeignKey("src.Models.AanmeldModel", "CaregiverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("src.Models.Caregiver", null)
+                        .WithMany("Aanmeldingen")
+                        .HasForeignKey("CaregiverId1");
+
+                    b.HasOne("src.Models.UserModel", "User")
+                        .WithOne()
+                        .HasForeignKey("src.Models.AanmeldModel", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Caregiver");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("src.Models.Caregiver", b =>
+                {
+                    b.HasOne("src.Models.UserModel", null)
+                        .WithOne("Caregiver")
+                        .HasForeignKey("src.Models.Caregiver", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("src.Models.UserModel", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("src.Models.Caregiver", b =>
+                {
+                    b.Navigation("Aanmeldingen");
+                });
+
+            modelBuilder.Entity("src.Models.UserModel", b =>
+                {
+                    b.Navigation("Caregiver");
                 });
 #pragma warning restore 612, 618
         }

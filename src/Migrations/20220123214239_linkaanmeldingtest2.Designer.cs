@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using database;
 
 namespace src.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220123214239_linkaanmeldingtest2")]
+    partial class linkaanmeldingtest2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -179,19 +181,13 @@ namespace src.Migrations
                     b.Property<int>("CaregiverId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CaregiverId1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CaregiverId")
-                        .IsUnique();
-
-                    b.HasIndex("CaregiverId1");
+                    b.HasIndex("CaregiverId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -384,14 +380,10 @@ namespace src.Migrations
             modelBuilder.Entity("src.Models.AanmeldModel", b =>
                 {
                     b.HasOne("src.Models.Caregiver", "Caregiver")
-                        .WithOne()
-                        .HasForeignKey("src.Models.AanmeldModel", "CaregiverId")
+                        .WithMany("Aanmeldingen")
+                        .HasForeignKey("CaregiverId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("src.Models.Caregiver", null)
-                        .WithMany("Aanmeldingen")
-                        .HasForeignKey("CaregiverId1");
 
                     b.HasOne("src.Models.UserModel", "User")
                         .WithOne()
