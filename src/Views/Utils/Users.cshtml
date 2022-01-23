@@ -1,0 +1,37 @@
+@model IEnumerable<src.Models.UserModel>
+
+@{
+    ViewBag.Title = "All Users";
+}
+
+<h1>All Users</h1>
+
+@if (Model.Any())
+{
+    <a asp-area="Identity" asp-page="/Account/Register"
+       class="btn btn-primary mb-3" style="width:auto">
+        Add new user
+    </a>
+
+    foreach (var user in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                User Id : @user.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@user.UserName</h5>
+                <p class="card-title">@user.Email</p>
+                @foreach (var item in user.UserRoles)
+                {
+                    <p class="card-title">@item.Role.Name</p>
+                }
+            </div>
+            <div class="card-footer">
+                <a asp-action="EditUser" asp-controller="Utils" asp-route-id="@user.Id" class="btn btn-danger">Edit</a>
+                
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    }
+}

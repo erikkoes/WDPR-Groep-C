@@ -7779,11 +7779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
+      "projectUniqueName": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
+      "projectPath": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
       "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\obj\\",
+      "outputPath": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
