@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace src.Models{
-    public class ReportMessageModel{
+    public class ReportMessageModel {
         [Key]
         public string ReportId{get;set;}
         [Required]

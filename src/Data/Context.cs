@@ -17,11 +17,9 @@ namespace database
         public DbSet<ReportMessageModel> Reports { get; set; }
         public DbSet<AanmeldModel> Aanmelding { get; set; }
         public DbSet<Caregiver> Caregiver { get; set; }
-        public DbSet<UserModel> User { get; set; }
         public DbSet<ChatRoom> Rooms { get; set; }
         public DbSet<ChatUser> ChatUser { get; set; }
         public DbSet<UserModel> User { get; set; }
-        public DbSet<ReportMessageModel> Reports{get;set;}
         
         public Context (DbContextOptions<Context> options)
             : base(options)

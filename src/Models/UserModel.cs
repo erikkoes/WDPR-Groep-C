@@ -20,9 +20,9 @@ namespace src.Models
         // public int AanmeldingId { get; set; }
 
         public ICollection<UserRole> UserRoles { get; set; }
+        public ICollection<ChatUser> ChatRooms { get; set; }
 
         #nullable enable
         public Caregiver? Caregiver { get; set; }
-        public ICollection<ChatUser> ChatRooms { get; set; }
     }
 }
