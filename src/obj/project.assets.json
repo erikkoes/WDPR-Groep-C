@@ -7774,19 +7774,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\moham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\src.csproj",
+      "projectUniqueName": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
       "projectName": "src",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\src.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\WDPR-Groep-C\\src\\obj\\",
+      "projectPath": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
+      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

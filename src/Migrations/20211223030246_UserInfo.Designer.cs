@@ -18,7 +18,7 @@ namespace src.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.RoleModel", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");

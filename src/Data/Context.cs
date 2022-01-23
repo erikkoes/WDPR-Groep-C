@@ -2,13 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using src.Models;
 using Message;
 namespace database
 {
-    public class Context : IdentityDbContext<UserModel>
+    public class Context : IdentityDbContext<UserModel, RoleModel, string, IdentityUserClaim<string>,
+    UserRole, IdentityUserLogin<string>,
+    IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
         public DbSet<MessageModel> Messages { get; set; }
         public DbSet<ChatRoomModel> Rooms { get; set; }
@@ -50,6 +53,19 @@ namespace database
             .HasOne(c => c.Caregiver)
             .WithOne()
             .HasForeignKey<AanmeldModel>(b => b.CaregiverId);
+
+            modelBuilder.Entity<UserRole>(userRole =>
+            {
+                userRole.HasOne(ur => ur.Role)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.RoleId)
+                    .IsRequired();
+
+                userRole.HasOne(ur => ur.User)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.UserId)
+                    .IsRequired();
+            });
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using src.Models;
 
@@ -14,22 +15,28 @@ namespace src.Controllers
     [Authorize(Roles = "Admin")]
     public class UtilsController : Controller
     {
-        private readonly RoleManager<IdentityRole> roleManager;
-        private readonly UserManager<UserModel> userManager;
+        private readonly RoleManager<RoleModel> _roleManager;
+        private readonly UserManager<UserModel> _userManager;
+        private readonly ILogger<UtilsController> _logger;
 
-        public UtilsController(RoleManager<IdentityRole> roleMgr, UserManager<UserModel> userMgr)
+        public UtilsController(RoleManager<RoleModel> roleMgr, UserManager<UserModel> userMgr, ILogger<UtilsController> logger)
         {
-            roleManager = roleMgr;
-            userManager =  userMgr;
+            _roleManager = roleMgr;
+            _userManager =  userMgr;
+            _logger =  logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var roles = roleManager.Roles.ToArray();
-            var user = await userManager.GetUserAsync(HttpContext.User);
-            var userRoles = await userManager.GetRolesAsync(user);
-            var users = userManager.Users;
+            var roles = await _roleManager.Roles.ToListAsync();
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var userRoles = await _userManager.GetRolesAsync(user);
+            var users = await _userManager.Users
+                .Include(x => x.UserRoles)
+                .ThenInclude(x => x.Role)
+                .AsNoTracking()
+                .ToListAsync();
 
             UtilsViewModel utils = new UtilsViewModel();
             utils.User = user;
@@ -51,12 +58,12 @@ namespace src.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityRole identityRole = new IdentityRole
+                RoleModel roleModel = new RoleModel
                 {
                     Name = model.RoleName
                 };
 
-                IdentityResult result =  await roleManager.CreateAsync(identityRole);
+                IdentityResult result =  await _roleManager.CreateAsync(roleModel);
 
                 if (result.Succeeded)
                 {
@@ -74,21 +81,44 @@ namespace src.Controllers
         [HttpGet]
         public IActionResult Users()
         {
-            var users = userManager.Users;
+            var users = _userManager.Users
+                .Include(x => x.UserRoles)
+                .ThenInclude(x => x.Role)
+                .AsNoTracking()
+                .ToList();
             return View(users);
         }
 
         [HttpGet]
         public async Task<IActionResult> EditUser(string id)
         {
-            var user = await userManager.FindByIdAsync(id);
+            var user = await _userManager.Users
+                    .Include(x => x.UserRoles)
+                    .ThenInclude(x => x.Role)
+                    .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .SingleOrDefaultAsync();
 
             if (user == null)
             {
                 return View("NotFound");
             }
+
+            var roles = await _roleManager.Roles.ToListAsync();
+            ViewBag.Roles = roles;
             
             return View(user);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddRoleToUser(string RoleId, string UserId)
+        {
+            _logger.LogInformation(UserId);
+            _logger.LogInformation("a");
+            var user = await _userManager.FindByIdAsync(UserId);
+            var role = await _roleManager.FindByIdAsync(RoleId);
+            await _userManager.AddToRoleAsync(user, role.Name);
+            return Redirect(HttpContext.Request.Headers["Referer"]);
         }
     }
 }

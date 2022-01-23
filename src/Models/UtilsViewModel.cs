@@ -9,7 +9,7 @@ namespace src.Models
 
         public IEnumerable<string> CurrentRoles { get; set; }
 
-        public IEnumerable<IdentityRole> Roles { get; set; }
+        public IEnumerable<RoleModel> Roles { get; set; }
 
         public IEnumerable<UserModel> AllUsers { get; set; }
     }
