@@ -101,7 +101,7 @@ using src.Areas.Identity.Pages.Account;
 #line hidden
 #nullable disable
             WriteLiteral("            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bda081e18dd8c851ef4e2a28b1434286f35f5665977", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bda081e18dd8c851ef4e2a28b1434286f35f5665897", async() => {
                 WriteLiteral("\r\n                <button type=\"submit\" class=\"nav-link btn btn-link text-dark\">Click here to Logout</button>\r\n            ");
             }
             );

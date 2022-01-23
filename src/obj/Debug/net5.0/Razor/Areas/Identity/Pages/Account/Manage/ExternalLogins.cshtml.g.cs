@@ -99,7 +99,7 @@ using src.Areas.Identity.Pages.Account.Manage;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "707b141c204b686efffbf3eef7ea787f076f7e5a7867", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "707b141c204b686efffbf3eef7ea787f076f7e5a7797", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -167,9 +167,9 @@ WriteAttributeValue("", 455, $"login-provider-{login.LoginProvider}", 455, 42, f
 #line hidden
 #nullable disable
             WriteLiteral("                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "707b141c204b686efffbf3eef7ea787f076f7e5a11322", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "707b141c204b686efffbf3eef7ea787f076f7e5a11192", async() => {
                 WriteLiteral("\r\n                                <div>\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "707b141c204b686efffbf3eef7ea787f076f7e5a11658", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "707b141c204b686efffbf3eef7ea787f076f7e5a11528", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -194,7 +194,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "707b141c204b686efffbf3eef7ea787f076f7e5a13636", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "707b141c204b686efffbf3eef7ea787f076f7e5a13496", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -305,7 +305,7 @@ AddHtmlAttributeValue("", 677, $"remove-login-{login.LoginProvider}", 677, 40, f
 #line hidden
 #nullable disable
             WriteLiteral("    <h4>Add another service to log in.</h4>\r\n    <hr />\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "707b141c204b686efffbf3eef7ea787f076f7e5a19958", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "707b141c204b686efffbf3eef7ea787f076f7e5a19738", async() => {
                 WriteLiteral("\r\n        <div id=\"socialLoginList\">\r\n            <p>\r\n");
 #nullable restore
 #line 46 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml"
