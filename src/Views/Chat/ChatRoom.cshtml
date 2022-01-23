@@ -1,3 +1,9 @@
+@model src.Models.ChatRoom
+@{
+
+    ViewData["Title"] = Model.RoomName;
+}
+
 <div class="container">
         <div class="row">&nbsp;</div>
         <div class="row">
@@ -23,3 +29,48 @@
     </div>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
+
+@section Scripts{
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+    connection.on("RecieveMessage", function (messageObj) {
+        console.log(messageObj);
+        var e = document.getElementById('messageList');
+
+        var li = document.createElement("li");
+        document.getElementById("messagesList").appendChild(li);
+        li.textContent = `${messageObj.userName}: ${messageObj.messageContent}`;
+
+        $(e).append(li)
+        @* e.scrollTop = e.scrollHeight; *@
+    })
+
+    connection.start().then(function () {
+        connection.invoke('JoinRoom', '@Model.Id');
+        console.log('Connected');
+    }).catch(function (err) {
+        console.log(err)
+    })
+
+    window.addEventListener('onunload', function () {
+        connection.invoke('leaveRoom', '@Model.Id');
+    })
+
+    $('#sendButton').on('click', function(e) {
+        let msg = $('#messageInput').val();
+        $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("SendMessage", "Chat")',
+                data:
+                {
+                    UserId: "@ViewBag.loggedInUserId",
+                    ChatId: @Model.Id,
+                    Message: msg,
+                }
+            }
+        )
+    });
+</script>
+}

@@ -11,14 +11,20 @@ namespace src.Models
     {
         
         public int Id {get; set;}
+
         [Required]
-        public string message{get;set;}
+        public string Message{get;set;}
+
         [Required]
         public string UserName{get;set;}
+
         [Required]
         public int ChatRoomId {get;set;}
-        public int UserId{get;set;}       
-        public DateTime date{get;set;}
+
+        public string UserId{get;set;} 
+
+        public DateTime Date{get;set;}
+
         public ICollection<ChatUser> Users { get; set; }
         
 
