@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
 using src;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\_ViewImports.cshtml"
 using src.Models;
 
 #line default
@@ -34,7 +34,7 @@ using src.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
-#line 1 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Home\Privacy.cshtml"
+#line 1 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Home\Privacy.cshtml"
   
     ViewData["Title"] = "Privacy Policy";
 
@@ -43,7 +43,7 @@ using src.Models;
 #nullable disable
             WriteLiteral("<h1>");
 #nullable restore
-#line 4 "c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\Views\Home\Privacy.cshtml"
+#line 4 "C:\Users\Admin\Desktop\WDPR-Groep-C\src\Views\Home\Privacy.cshtml"
 Write(ViewData["Title"]);
 
 #line default

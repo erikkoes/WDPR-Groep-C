@@ -23,5 +23,6 @@ namespace src.Models
 
         #nullable enable
         public Caregiver? Caregiver { get; set; }
+        public ICollection<ChatUser> ChatRooms { get; set; }
     }
 }

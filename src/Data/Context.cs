@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using src.Models;
-using Message;
+
 namespace database
 {
     public class Context : IdentityDbContext<UserModel, RoleModel, string, IdentityUserClaim<string>,
@@ -14,24 +14,24 @@ namespace database
     IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
         public DbSet<MessageModel> Messages { get; set; }
-        public DbSet<ChatRoomModel> Rooms { get; set; }
         public DbSet<ReportMessageModel> Reports { get; set; }
         public DbSet<AanmeldModel> Aanmelding { get; set; }
         public DbSet<Caregiver> Caregiver { get; set; }
         public DbSet<UserModel> User { get; set; }
+        public DbSet<ChatRoom> Rooms { get; set; }
+        public DbSet<ChatUser> ChatUser { get; set; }
+        public DbSet<UserModel> User { get; set; }
+        public DbSet<ReportMessageModel> Reports{get;set;}
         
         public Context (DbContextOptions<Context> options)
             : base(options)
         {
         }
-        public Context(){
-
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<ChatRoomModel>()
+            modelBuilder.Entity<ChatRoom>()
             .HasAlternateKey(c => c.RoomName);
 
             modelBuilder.Entity<AanmeldModel>()
@@ -66,6 +66,19 @@ namespace database
                     .HasForeignKey(ur => ur.UserId)
                     .IsRequired();
             });
+
+            modelBuilder.Entity<ChatUser>()
+                .HasKey(x => new { x.UserId, x.ChatRoomId });
+
+            modelBuilder.Entity<ChatUser>()
+                .HasOne<UserModel>(u => u.User)
+                .WithMany(cr => cr.ChatRooms)
+                .HasForeignKey(u => u.UserId);
+
+            modelBuilder.Entity<ChatUser>()
+                .HasOne<ChatRoom>(cr => cr.ChatRoom)
+                .WithMany(u => u.Users)
+                .HasForeignKey(cr => cr.ChatRoomId);
         }
     }
 }

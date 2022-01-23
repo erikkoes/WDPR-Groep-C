@@ -1,35 +1,51 @@
+@model src.Controllers.ChatController
 @{
     ViewData["Title"] = "Chat";
 }
 
-<div class="container">
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-2">Room</div>
-            <div class="col-4"><input type="text" id="room" /></div>
-
-        </div>
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-6">
-                <a asp-area="" asp-controller="Chat" asp-action="ChatPage" id="joinButton" value ="Join Room" class="btn btn-primary">See all users</a>
+    <div class="container">
+        <form method="post" asp-controller="Chat" asp-action="CreateRoom">
+            <div asp-validation-summary="All" class="text-danger col-lg-12"></div>
+            <div class="form-group">
+                <label asp-for="Input.RoomName"></label>
+                <input asp-for="Input.RoomName" class="form-control" placeholder="Room name" />
+                <span asp-validation-for="Input.RoomName" class="text-danger"></span>
             </div>
-        </div>
+            <div class="form-group">
+                <label asp-for="Input.RoomSubject"></label>
+                <input asp-for="Input.RoomSubject" class="form-control" placeholder="Room name" />
+                <span asp-validation-for="Input.RoomSubject" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Room name</th>
+                <th scope="col">Room subject</th>
+                <th scope="col"</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var room in ViewBag.rooms)
+                {
+                    <tr scope="row">
+                        <td>@room.Id</td>
+                        <td>@room.RoomName</td>
+                        <td>@room.RoomSubject</td>
+                        @* <td>@room.ChatUser.Count</td> *@
+                        <td><button type="button" class="btn btn-primary">Join</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-<div class="col-4">
-            <div class="card">
-                <h5 class="card-header">Users</h5>
-                <div class="card-body">
-                    @foreach (var room in Model.AllUsers.Take(5))
-                    {
-                        <div class="row mb-4">
-                            <p class="card-text col-4">@room.RoomName</p>                           
-                        </div>
-                    }
-                    <a asp-area="" asp-controller="Char" asp-action="Rooms" class="btn btn-primary">Rooms</a>
-                </div>
-            </div>
-        </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
 
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>

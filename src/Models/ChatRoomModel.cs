@@ -1,11 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.ComponentModel.DataAnnotations;
 
 namespace src.Models
 {
-    public class ChatRoomModel
+    public class ChatRoom
     {
-        public int Id {get; set;}
+        // public ChatRoom() {
+        //     Users = new List<ChatUser>();
+        // }
+        
+        public int Id { get; set; }
 
         [Required]
         //[StringLength(40, MinimumLength = 4)]
@@ -13,8 +19,10 @@ namespace src.Models
        
         public string RoomName { get; set; }
 
-        //[Required]
-        public string UsersJSON { get; set; }
+        public string RoomSubject { get; set; }
 
+        public ICollection<ChatUser> Users { get; set; }
+        
+        public ICollection<MessageModel> Messages { get; set; }
     }
 }
