@@ -1,0 +1,71 @@
+@model UtilsViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div>
+    <h4>Admin Dashboard</h4>
+    <div class="row mt-4">
+        <div class="col-4">
+            <div class="card">
+                <h5 class="card-header">Reports</h5>
+                <div class="card-body">
+                    @* <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> *@
+                    <a href="#" class="btn btn-primary">See all</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <h5 class="card-header">Users</h5>
+                <div class="card-body">
+                    @foreach (var user in Model.AllUsers.Take(5))
+                    {
+                        <div class="row mb-4">
+                            <p class="card-text col-4">@user.UserName</p>
+                            <p class="card-text col-8">@user.Email</p>
+                        </div>
+                    }
+                    <a asp-area="" asp-controller="Utils" asp-action="Users" class="btn btn-primary">See all users</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <h5 class="card-header">Roles</h5>
+                <div class="card-body">
+                    @foreach (var role in Model.Roles)
+                    {
+                        <div class="row mb-4">
+                            <p class="card-text col-8">@role</p>
+                            @foreach (var item in Model.CurrentRoles)
+                            {
+                                if (item != role.Name)
+                                {
+                                    <a href="#" class="btn btn-danger col-4">Delete</a>
+                                }
+                            }
+                        </div>
+                    }
+                    <a asp-area="" asp-controller="Utils" asp-action="CreateRole" class="btn btn-primary">Add new role</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-4">
+            <div class="card">
+                <h5 class="card-header">Chats</h5>
+                <div class="card-body">
+                    @* <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> *@
+                    <a href="#" class="btn btn-primary">See all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
