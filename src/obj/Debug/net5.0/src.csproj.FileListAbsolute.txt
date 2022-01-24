@@ -495,3 +495,4 @@ C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\R
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
 C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\EditUser.cshtml.g.cs
 c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_UtilsPartial.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Chat\ChatRoom.cshtml.g.cs
