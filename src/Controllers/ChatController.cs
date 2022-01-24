@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using src.Models;
+using Microsoft.EntityFrameworkCore;
+using SignalRChat.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace src.Controllers
 {
@@ -18,18 +21,18 @@ namespace src.Controllers
     {
         private readonly Context _context;
         private readonly ILogger<ChatController> _logger;
-        private readonly UserManager<UserModel> userManager;
+        private readonly UserManager<UserModel> _userManager;
 
         public ChatController(Context context, ILogger<ChatController> logger, UserManager<UserModel> userMgr)
         {
             _context = context;
             _logger = logger;
-            userManager = userMgr;
+            _userManager = userMgr;
         }
         
         public IActionResult Index()
         {
-            var rooms = _context.Rooms.ToList();
+            var rooms = _context.Rooms.Include(r => r.Users).ToList();
 
             // RoomViewModel rmodel = new RoomViewModel();
 
@@ -83,7 +86,7 @@ namespace src.Controllers
                 await _context.Rooms.AddAsync(room);
                 await _context.SaveChangesAsync();
 
-                UserModel self = await userManager.GetUserAsync(HttpContext.User);
+                UserModel self = await _userManager.GetUserAsync(HttpContext.User);
                 await AddUserToChatAsync(room.Id, self);
             }
 
@@ -98,8 +101,8 @@ namespace src.Controllers
 
         private async Task AddUserToChatAsync(int roomId, UserModel self)
         {
-            // _logger.LogInformation(self.Id);
-            // _logger.LogInformation(roomId.ToString());
+            _logger.LogInformation(self.Id);
+            _logger.LogInformation(roomId.ToString());
             ChatUser chatuser = new ChatUser
             {
                 UserId = self.Id,
@@ -129,5 +132,47 @@ namespace src.Controllers
             
             return View(rmodel);
         }
+
+        [Route("ChatRoom/{id}")]
+        public async Task<IActionResult> ChatRoomAsync(int id)
+        {
+            _logger.LogInformation(id.ToString());
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+            ChatRoom chat = new ChatRoom();
+            chat = _context.Rooms.Where(r => r.Id == id).First();
+
+            return View(chat);
+        }
+
+        [HttpPost]
+        public async void SendMessage(string UserId, int ChatId, string Message, [FromServices] IHubContext<ChatHub> chat)
+        {
+            UserModel _user = await _userManager.GetUserAsync(HttpContext.User);
+
+            ChatRoom _chat = _context.Rooms.Where(r => r.Id == ChatId).First();
+            
+            MessageModel _message = new MessageModel
+            {
+                UserId = _user.Id,
+                message = Message,
+                date = DateTime.Now,
+                ChatRoomId = ChatId
+            };
+
+            // _chat.Messages.Add(_message);
+
+            // _context.SaveChanges();
+
+            await chat.Clients.Group(ChatId.ToString()).SendAsync("RecieveMessage", new 
+            {
+                sentById = _user.Id,
+                messageContent = _message.message, 
+                timeSent = _message.date, 
+                userName = _user.UserName, 
+                messageId = _message.Id
+            });
+        }
+
     }
 }
