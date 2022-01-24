@@ -483,3 +483,15 @@ C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Det
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Edit.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\index.cshtml.g.cs
 C:\Users\Admin\Desktop\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\EditUser.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\SendGrid.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\bin\Debug\net5.0\StarkbankEcdsa.dll
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Delete.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Details.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\Edit.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Aanmeld\index.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Index.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\ReportMessage\Report.cshtml.g.cs
+C:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Utils\EditUser.cshtml.g.cs
+c:\Users\moham\C#_projecten\Wdpr\WDPR-Groep-C\src\obj\Debug\net5.0\Razor\Views\Shared\_UtilsPartial.cshtml.g.cs

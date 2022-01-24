@@ -16,13 +16,11 @@ using Microsoft.Extensions.Logging;
 
 using SendGrid;
 using SendGrid.Helpers.Mail;
-using System;
-using System.Threading.Tasks;
 
 namespace src.Areas.Identity.Pages.Account
 {
     // [Authorize(Roles = "Admin,Caregiver")]
-    public class RegisterModel : PageModel
+        public class RegisterModel : PageModel
     {
         private readonly SignInManager<src.Models.UserModel> _signInManager;
         private readonly UserManager<src.Models.UserModel> _userManager;
