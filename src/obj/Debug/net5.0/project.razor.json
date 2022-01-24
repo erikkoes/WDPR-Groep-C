@@ -15924,6 +15924,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\Views\\Chat\\ChatRoom.cshtml",
+      "TargetPath": "Views\\Chat\\ChatRoom.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
