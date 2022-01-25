@@ -12,7 +12,7 @@ using src.Models;
 
 namespace src.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class UtilsController : Controller
     {
         private readonly RoleManager<RoleModel> _roleManager;

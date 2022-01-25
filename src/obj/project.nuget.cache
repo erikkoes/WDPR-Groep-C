@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iJwrcsozBodG/kZX5wEqmS7ES64XbKq9VO3xY7HHjoo2CJfZn1rtmaSH/I9CnEGt/T0bBiaU3QWcdnuyVIZJgg==",
+  "dgSpecHash": "x8tlfIURkrjnx1D+rCyQoMXXixKY6byZQAJ6QwCnfF4Ur5DVFO/I9mB/f+U68YRkEpMMWyxw95Vz0G/Wc8aNJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
+  "projectFilePath": "c:\\Users\\moham\\C#_projecten\\Wdpr\\WDPR-Groep-C\\src\\src.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moham\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
