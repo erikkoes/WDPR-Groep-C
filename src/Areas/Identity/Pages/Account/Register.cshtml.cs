@@ -140,7 +140,7 @@ namespace src.Areas.Identity.Pages.Account
         {
             _logger.LogInformation("Email.");
             // var apiKey = Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
-            var client = new SendGridClient("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");
+            var client = new SendGridClient("");
             var from = new EmailAddress("mikevonk00@icloud.com", "Example User");
             var subject = "Accepted in chat!";
             var to = new EmailAddress(email, "Example User");
